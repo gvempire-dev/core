@@ -1,0 +1,49 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Internals
+_legal
+_onboarding
+
+# dependencies
+node_modules
+.cache
+/.pnp
+.pnp.js
+yarn.lock
+
+# Editor Config
+.prettierrc
+.prettierignore
+.eslintignore
+.eslintrc
+
+
+# testing
+/coverage
+
+# production
+/build
+.next/
+out/
+.now/
+.netlify
+sw.js
+sw.js.map
+workbox-*.js
+workbox-*.js.map
+
+# misc
+.DS_Store
+admin-credentials.json
+.env
+.env.*
+hosting.*
+
+#logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+firebase-debug.log*
+.firebase/hosting.YnVpbGQ.cache
+
+.now
