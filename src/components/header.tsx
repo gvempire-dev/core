@@ -1,11 +1,10 @@
-import * as React from 'react';
-import Link from 'next/link';
 import { css } from '@emotion/core';
 import { motion } from 'framer-motion';
-
-import { ComponentStyles } from '../common/types';
-import { contentContainer, button, link } from '../common/styles';
+import Link from 'next/link';
+import * as React from 'react';
 import { fadeIn } from '../common/animations';
+import { button, contentContainer, link } from '../common/styles';
+import { ComponentStyles } from '../common/types';
 import useActiveLinks from './use-active-links';
 
 export const styles: ComponentStyles = {
@@ -154,7 +153,7 @@ const Header: React.FC = () => {
             </Link>
           ))}
 
-          <Link href="/contact" passHref>
+          {/* <Link href="/contact" passHref>
             <a>
               <button
                 css={styles.navButton}
@@ -163,7 +162,7 @@ const Header: React.FC = () => {
                 work with us
               </button>
             </a>
-          </Link>
+          </Link> */}
         </nav>
       </div>
     </motion.header>

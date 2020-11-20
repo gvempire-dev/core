@@ -1,25 +1,24 @@
-import * as React from 'react';
-import unfetch from 'isomorphic-unfetch';
 import { css } from '@emotion/core';
 import { motion } from 'framer-motion';
+import unfetch from 'isomorphic-unfetch';
+import * as React from 'react';
 import { useForm } from 'react-hook-form';
-
-import { ComponentStyles } from '../common/types';
+import { fadeIn } from '../common/animations';
 import {
-  link,
-  headerTitle,
   button,
-  tagline,
-  pageTitle,
-  lead,
-  formWrapper,
-  formHeader,
   formActions,
   formFieldset,
-  formLabel,
+  formHeader,
   formInput,
+  formLabel,
+  formWrapper,
+  headerTitle,
+  lead,
+  link,
+  pageTitle,
+  tagline,
 } from '../common/styles';
-import { fadeIn } from '../common/animations';
+import { ComponentStyles } from '../common/types';
 
 const styles: ComponentStyles = {
   pageContent: (theme) => css`
@@ -78,7 +77,7 @@ const Contact = () => (
           href="https://www.google.com/maps/place/Colorado+Springs,+CO"
           css={link}
         >
-          Colorado Springs, CO
+          Gainesville, FL
         </a>
       </p>
 

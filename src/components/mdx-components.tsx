@@ -1,10 +1,9 @@
 /* eslint-disable react/display-name */
-import * as React from 'react';
 import { css } from '@emotion/core';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-
-import { ComponentStyles, ThemedStyles } from '../common/types';
+import * as React from 'react';
 import * as commonStyles from '../common/styles';
+import { ComponentStyles, ThemedStyles } from '../common/types';
 
 const CodeBlock: React.FC<{
   children?: any;
@@ -88,15 +87,18 @@ const styles: ComponentStyles = {
   blockquote: (theme) => css`
     ${commonStyles.blockquote(theme)};
   `,
-  ul: () => css`
+  ul: (theme) => css`
+    line-height: ${theme.lineHeights.taller};
     max-width: 80%;
     margin: 0 auto;
   `,
-  ol: () => css`
+  ol: (theme) => css`
+    line-height: ${theme.lineHeights.taller};
     max-width: 80%;
     margin: 0 auto;
   `,
   li: (theme) => css`
+    line-height: ${theme.lineHeights.taller};
     margin-left: ${theme.space[8]};
     list-style: initial;
     margin: 0 auto;
@@ -150,6 +152,7 @@ const styles: ComponentStyles = {
   `,
   a: (theme) => css`
     ${commonStyles.link(theme)};
+    line-height: ${theme.lineHeights.taller};
   `,
   img: (theme) => css`
     margin: ${theme.space[16]} auto;

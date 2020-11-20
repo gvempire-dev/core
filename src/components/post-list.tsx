@@ -1,11 +1,10 @@
-import * as React from 'react';
-import Link from 'next/link';
 import { css } from '@emotion/core';
 import { motion } from 'framer-motion';
-
-import { tagline, pageBody, button, pageTitle } from '../common/styles';
+import Link from 'next/link';
+import * as React from 'react';
+import { fadeIn, fadeWithChildren } from '../common/animations';
+import { button, pageBody, pageTitle, tagline } from '../common/styles';
 import { ComponentStyles } from '../common/types';
-import { fadeWithChildren, fadeIn } from '../common/animations';
 import postList from '../pages/blog/_index';
 
 const styles: ComponentStyles = {

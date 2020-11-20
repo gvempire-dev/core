@@ -30,7 +30,7 @@
     "isomorphic-unfetch": "3.0.0",
     "next": "latest",
     "prism-react-renderer": "^1.0.2",
-    "react": "^16.12.0",
+    "react": "^16.x.x",
     "react-accessible-accordion": "^3.0.1",
     "react-dom": "^16.12.0",
     "react-hook-form": "^5.1.3",
