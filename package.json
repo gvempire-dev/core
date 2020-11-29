@@ -14,6 +14,7 @@
     "deploy": "npm-run-all -l -s deploy:live",
     "deploy:live": "now deploy",
     "deploy:prod": "now deploy --prod",
+    "changelog": "git log --all --graph --decorate --oneline > CHANGELOG; git add .; git commit -m \"update changelog\"; yarn version --patch; git push --follow-tags; echo \"Released $npm_package_version\"",
     "predeploy": "npm-run-all -l -s format lint test"
   },
   "dependencies": {
@@ -56,7 +57,7 @@
     "now": "^17.0.4",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
-    "typescript": "3.7.3"
+    "typescript": "latest"
   },
   "license": "ISC"
 }

@@ -1,0 +1,207 @@
+* 13eee1d1 (HEAD -> latest, staging) remove contact from header, add new blgo post
+* a8039d9e whoops init
+* d422b99c (origin/latest) new links
+* 0230de33 wrong link
+* 1799ec44 updated-post
+* dceebb54 update post
+* 03639ab2 remove sitemap file
+* e5beb040 add sitemap
+* 836f908d change links for better SEO and remove sw artifacts
+* b6d5b425 passHref for indexing
+* de936899 remove pwa
+* cf70cce9 added now.json
+* 3e8554b5 remove now.json
+* e5772c4c new deps
+* 746ac56a remove uneccessary
+* e06bfbe0 new post
+* d03146b2 update license
+* c4eb279d update license
+* b12f3f94 spelling
+* 2c87f5a9 eslint deps
+* 4beccb95 auditing
+* 1d055700 update eslint
+*   973a9b99 Merge branch '2020' into 'latest'
+|\  
+| * 296dcf98 v2.0 for 2020
+|/  
+| * 0b2f2a64 (origin/2020) add server side emotoin
+| * d705c828 remove border-radius, add names to themes, some links work
+| * 48c99542 update email to team@gvempire.dev
+| * 2b2ad17d add motion to contact form
+| * b1f6daef fix deploy
+| * 87dae773 update copy and tests
+| * 2ec399ec add simple animations
+| * 4ada2488 added accessibility
+| * fde10631 add sitemap and robots
+| * 1f82e733 fix blog width
+| * 4b07c4cd update `a-look-into-2020`
+| * 874e61a5 weird
+| * a1bd8345 new contact styling, fix blog image in chrome
+| * d633b68d udpate copy
+| * 7711cd8e refactor contact form, add disabled state
+| * a11abc1a refactored hero and section
+| * 3dc55a4c add newsletter signup, exctract form styling
+| * fd62ec60 new blog styles
+| * 70823b70 new button styles, new header styles, new theme colors
+| * 36c255d3 new api url
+| * b9471b12 why was that 2020?
+| * 5834c605 whoops only needs to be a string for gitlab ci
+| * 560c4263 fix contact page tests and input elements
+| * 7161d168 new container, .com -> .dev
+| * 82b3d146 new tests, remove logo component
+| * 529ba8ed fix button styling
+| * 0b5321e6 new logo, new footer
+| * f13cc6cc disable service worker in production
+| * 14cd4fc1 new themes, remove layout, add outline button
+| * 7a596320 remove layout add light and dark theme
+| * 6e1ab91b a look into 2020
+| * de9c5c12 add icons, favicons, and pwa support
+| * 647a17c3 move logos
+| * b6dd0ec3 updates social media links
+| * 8cc1f028 deployment test
+| * 04e255e4 light theme?
+| * 6577c2f3 change logo styles
+| * 82863577 renamed `navLink` to `link`
+| * 6e836956 added sort, filter, limit, functionality to post-list, moved blog
+| * 9e662db7 post styling changes
+| * 20c6b18a new post-image fit
+| * 927bbac3 external and inline links, new footer links
+| * 6449d66d update legal and post card responsiveness
+| * 80fe97d6 added post-list/post-card
+| * 7db8ac8f fix tests
+| * cffe4fe9 add postList
+| * 0dbc7bbb add mdx styling
+| * 1d092a45 change layout and eslint parser
+| * 79ad7f66 added mdx pages
+| * 4f120e9d new titles
+| * 01bc4d05 tsconfig error
+| * 9b7fcf99 new heder taglines
+| * 667e17b1 remove video and resize images
+| * 01269f64 adds faq  with react-accessible-accordian
+| * 0d976c1d started messing with copy
+| * 59ffa7f9 ci: update latest build stage
+| * 6274a6aa * as React and some styling
+| * 9d83e147 exceprt renamed to tagline and contact page styling
+| * e049400e add  dotenv
+| * 62b64dc4 inegrate react-hook-form and contact form
+| * 1b897be6 commenting out contact fetch for tomorrow
+| * 77a73417 add `api/contact` function and send-email function
+| * 64189713 add `useChangingText` to index page
+| * 8090171a new socila media links
+| * 389b5696 theme alg change
+| * a9f6d4de now toggle theme is available
+| * a7f595a1 responsive styling
+| * bd67a8f4 new testimonials, some responsive styling changes
+| * 47cba2fe split usePathname into `useBreadcrumbs` and `useActiveLink`
+| * dcae4a52 remove babel-plugin-module-resolver
+| * e2b4030a added svg illustrations
+| * a06a3055 new theme, new footer background
+| * 0279f167 add video
+| * 4a43a4ed new theme, document titles, copy and legal polocies
+| * bff58acf add: `centered` and `absoluteCover`
+| * 86572314 create `usePathname`
+| * 22d91913 starting tests
+| * 8afb51c4 start adding tests
+| * 8249ce63 update Layout to layout in git history
+| * 248a2f14 moved a lot of the `indexStyles` to common styles, add header bg and and shadow
+| * 0080698e adding lading page
+| * 9ae37884 type changes
+| * e78619aa fix: header styling for now
+| * 1db9b4af scaffold pages
+| * 0d58adea fix to show up
+| * e7dd0fe8 scaffold next project
+| * 0c8f175a init next project
+|/  
+* 8155e3d7 (origin/master) update scripts
+* 765e1ce3 update version
+* 3b08fac8 deploy
+* 38a22dc7 deploy
+* 89a4ec51 hello
+* 935d5017 remove
+* 6357bdb3 fix: remove `React.Suspense` from `layout`
+* f6aa42e1 fix: remove page query in `mdx-template`
+* 1db87f69 fix: updates `legal` content
+* cea4ba82 gitlab
+*   c0e5fd9a Merge branch 'master' of https://gitlab.com/tkjohnson121/gv_empire
+|\  
+| * fb9f3e56 Add .gitlab-ci.yml
+* | 607577ed fix: idk
+|/  
+* ba5d8f5c src: under construction
+* 3b6455e3 components/layout: uneccessary div
+* 21fa3b43 components/layout: removes accident
+* 5e9bb1be components/layout: adds react suspense
+* 2ba5b291 hello world
+* fa7fe804 adds new blog posts
+* 8a0841ed update netlify.toml
+*   51cbf080 Merge pull request #1 from tkjohnson121/dev
+|\  
+| * d26a94d1 new netlify
+| * f6a5dcf2 got rid of sectionStyles and boxStyle
+| * a9984a9d gatsby-plugin-theme-ui: refactor theme object
+| * 20f0095a new components structure
+| * 649d653a scripts/generators: update gens
+| * 4a3dea08 format, refactor and removing integrations
+| * cc836673 components/f: footer
+| * 5d762509 header layout
+| * 226e8956 pricing, spotlights, services, and support
+| * 4ed79869 faw, reviews
+| * dec255a5 careers and hero
+| * 81398c74 about faq and index refactor
+| * b7472b34 src: updates features
+| * 0ccdbedf src: careers and about page
+| * 8edc15dd src: changes integrations
+| * 14d59931 adds gvempire contact
+| * d611472a re-init
+| * 3a8b79d0 new hero colors
+|/  
+* 6b85b689 client/public/index: small changes
+* 7bf05de1 client: new gatsby site
+* 6ec88f36 .vscode/settings: remove
+* b18dfbc2 netlify: remove
+* aa606a13 netlify changes
+* 72c3c871 adds netlify
+* faea9b31 changes
+* 5efb744f containers: fixes routes
+* ec98ed9d components: changes primary color
+* 471e5a0e src: adds portfolio page
+* e0579778 co: adds new thing
+* 8eb5a51e co: adds services page
+* 531e0a10 co: adds about page
+* 890ee753 containers/landingpage/index: adds comments
+* c3e94605 co: refactors service item for smaller width
+* ed50c4a7 components/servicelist: refactors service list
+* 76e55769 co: adds service list components
+* 5ebab2b3 src: adds services
+* 9f4f8278 adds first Service
+* 0cea0f3b client/src: changes button
+* acfa3109 client/s: cleanup
+* 1222dda8 client/src/components/hero/index: refactors hero
+* 543feba3 client/src/co: adds hero and section header, refactors hero
+* 4aa7b9b6 client/src: fixes hero
+* 0d4eb211 client/src: adds text and flex
+* eefea54e removes mineral ui
+* e3be2d89 client/src: reset Landing Page
+* bfd4438f client/s: resets landing page for emotion
+* 98f9ec6c client/src/base/index: creates base index
+* 4e516003 client/src: adds base components (Button, Card, Flex, Text)
+* 305ccfba client/src: adds container
+* 9637be8a client/src/components/layout/index: refactors layout
+* 6c64ee55 client/src/components/footer/index: refactors footer
+* 4286ca6c client/src/components/header/index: header styles
+* 1922a31d client: waiting for refactor
+* 7c2037c3 client: styles header
+* 469c9272 client: changing to rebass
+* 2c231783 changes landingPAge
+* 556fca4f client/src/co: Adds Footer Styling
+* 9cca64e6 client/s: handles LadingPage
+* da01e141 adds cards
+* 3dd9e6e3 client/src/components/theme/index: custom theme
+* b0770d39 client/src/components/header/index: init nac
+* d9d86667 client: works with app layout
+* ceb2fce8 inits full layout
+* 4b128446 client: init mineral ui theme
+* d35d47cf init lint
+* ceb39a8d wat
+* aac0e7f0 init
+* ca7e0cb8 init
