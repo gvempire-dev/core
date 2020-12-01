@@ -2,10 +2,10 @@ import { css } from '@emotion/core';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import * as React from 'react';
+import postList from '../blog/post-index';
 import { fadeIn, fadeWithChildren } from '../common/animations';
 import { button, pageBody, pageTitle, tagline } from '../common/styles';
 import { ComponentStyles } from '../common/types';
-import postList from '../pages/blog/_index';
 
 const styles: ComponentStyles = {
   postCard: (theme) => css`

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import IndexPage from '../pages/index';
+import BlogPage from '../blog';
 import AboutPage from '../pages/about';
-import ServicesPage from '../pages/services';
-import BlogPage from '../pages/blog';
 import ContactPage from '../pages/contact';
+import IndexPage from '../pages/index';
+import ServicesPage from '../pages/services';
 import { render } from './setup-tests';
 
 jest.mock('next/router', () => ({

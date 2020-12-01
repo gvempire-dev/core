@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { SitemapStream, streamToPromise } from 'sitemap';
-
-import posts from '../blog/_index';
+import posts from '../../blog/post-index';
 
 const staticPages = [
   { title: 'Home', url: '/' },

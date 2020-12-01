@@ -3,11 +3,9 @@
     <img src="https://via.placeholder.com/72" alt="Logo" width=72 height=72>
   </a>
 
-  <h3 align="center">GV Website</h3>
+  <h3 align="center">GVEMPIRE</h3>
 
   <p align="center">
-    Project name is a <a href="(https://gatsbyjg.org" target="_blank" rel="noreferrer noopener">GatsbyJS</a>  starter that features MDX pages, offline, and PWA abilities, while being themeable and configurable.
-    <br>
     <a href="https://reponame/issues/new?template=bug.md">Report bug</a>
     ·
     <a href="https://reponame/issues/new?template=feature.md&labels=feature">Request feature</a>
@@ -21,6 +19,7 @@
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Blog](#blog)
 - [Contributing](#contributing)
 - [Contact](#contact)
 - [License](#license)
@@ -38,27 +37,20 @@
 
 ## Features
 
-`gv-website` includes the following features.
-
-- `GatsbyJS` SSG
-- `Emotion` CSS-in-JS solution
-- `Theme UI` Project theming and base components
-- `gatsby-plugin-mdx`: mdx file sourcing
-- `gatsby-plugin-theme-ui`: theming and ui components
-- `gatsby-plugin-react-helmet`: page `<head>` data
-- `gatsby-plugin-manifest`: PWA abilities
-- `gatsby-plugin-offline`: offline access
+- MDX blog
+- SendGrid email api integration
+- Emotion CSS-in-JS w/ a custom theme inspired by Theme-UI
 
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 
 - You have installed the latest version of `node`
-- Solid understanding of `ReactJS`, `GatsbyJS`, and `EmotionJS`
+- Solid understanding of React.JS and possibly Next.JS
 
 ## Installation
 
-To install `gv-website`, follow these steps:
+To install gvempire, follow these steps:
 
 2. Clone and cd into project directory
 
@@ -66,13 +58,23 @@ To install `gv-website`, follow these steps:
 
 ## Usage
 
-To use `gv-website`, use these scripts:
+To use `gvempire`, use these scripts:
 
-`yarn build` - build the site for a production environment
+`start` - start the development server
 
-`yarn start` - start develpoment server
+`build` - build the production site
 
-`yarn serve` - serve production files
+`serve` - start the production server
+
+`test` - run tests
+
+`deploy` - deploy to vercel
+
+`changelog` - used after a commit to update changelog and package version
+
+## Blog
+
+When adding a new blox post, be sure to enter the file in the `post-index.js` file.
 
 ## Contact
 

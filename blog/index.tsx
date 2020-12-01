@@ -1,8 +1,7 @@
-import * as React from 'react';
 import Link from 'next/link';
-
-import { button } from '../../common/styles';
-import { PostList, Hero } from '../../components';
+import * as React from 'react';
+import { button } from '../common/styles';
+import { Hero, PostList } from '../components';
 
 const Blog = () => {
   return (
