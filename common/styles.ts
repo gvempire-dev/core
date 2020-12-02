@@ -68,9 +68,9 @@ export const absoluteCover: ThemedStyles = () => css`
 
 export const hero: ThemedStyles = (theme) => css`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   padding: ${theme.space['32']} ${theme.space[0]};
-  overflow: hidden;
   position: relative;
   z-index: ${theme.zIndices['overlay']};
 
@@ -377,6 +377,7 @@ export const button: ThemedStyles = (theme) => css`
 export const buttonGroup: ThemedStyles = (theme) => css`
   width: 100%;
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
   margin-top: ${theme.space[4]};
@@ -483,7 +484,6 @@ export const globalStyles: ThemedStyles = (theme) => css`
   main {
     max-width: 100vw;
     min-height: 100vh;
-    overflow-x: hidden;
     background-color: ${theme.colors.background};
     color: ${theme.colors.text};
   }
