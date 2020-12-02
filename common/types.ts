@@ -11,7 +11,7 @@ export type User = {
   name: string;
 };
 
-export type PostMetaData = {
+export type PostFrontMatter = {
   title: string;
   slug: string;
   excerpt: string;
@@ -22,7 +22,7 @@ export type PostMetaData = {
   headerAlt?: string;
 };
 
-export type PostEntry = [string, PostMetaData];
+export type PostEntry = [string, PostFrontMatter];
 
 export type StyledWithTheme = InterpolationWithTheme<Theme>;
 export type ThemedStyles = (theme: Theme) => SerializedStyles;

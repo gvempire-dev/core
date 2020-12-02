@@ -1,15 +1,12 @@
-import { PostLayout } from '../../components';
-
-export const meta = {
-  title: 'How Does a Business Fight a Virus',
-  slug: 'business-vs-covid',
-  excerpt:
-    'For small business owners suddenly deprived of customers, support from patrons can can spell the difference between surviving the pandemic and closing their doors forever.',
-  publishDate: '2020-04-07',
-  tags: ['gvempire', 'covid-19', 'small bussiness'],
-  headerImage:
-    'https://images.pexels.com/photos/3970333/pexels-photo-3970333.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-};
+---
+layout: 'post'
+title: 'How Does a Business Fight a Virus'
+slug: 'business-vs-covid'
+excerpt: 'For small business owners suddenly deprived of customers, support from patrons can can spell the difference between surviving the pandemic and closing their doors forever.'
+publishDate: '2020-04-07'
+tags: ['gvempire', 'covid-19', 'small bussiness']
+headerImage: 'https://images.pexels.com/photos/3970333/pexels-photo-3970333.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+---
 
 We were checking up on some of our favorite local businesses and noticed that many websites are down and most businesses are closed.
 In a time where social distancing is the norm, we understand that times are hard right now with COVID-19.
@@ -82,7 +79,3 @@ You can [send us a message](/contact) or
 [schedule your free 1-on-1](https://calendly.com/gvempire/discover).
 
 - The [team@gvempire.dev](mailto:team@gvempire.dev)
-
-export default ({ children }) => (
-  <PostLayout meta={meta}>{children}</PostLayout>
-);

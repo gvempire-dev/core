@@ -4,5 +4,5 @@ module.exports = {
     '@babel/preset-typescript',
     '@emotion/babel-preset-css-prop',
   ],
-  plugins: ['emotion'],
+  plugins: ['emotion', 'import-glob-array'],
 };

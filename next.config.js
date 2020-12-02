@@ -1,11 +1,18 @@
 require('./env.js');
+const withMDXEnhanced = require('next-mdx-enhanced');
 
-const withMDX = require('@next/mdx')({ extension: /\.(md|mdx)?$/ });
+// const withMDX = require('@next/mdx')({ extension: /\.(md|mdx)?$/ });
 
-module.exports = withMDX({
-  /**
-   * Use MDX for .md files
-   * @see https://github.com/zeit/next.js/tree/canary/packages/next-mdx
-   */
-  pageExtensions: ['md', 'mdx', 'tsx', 'ts'],
-});
+module.exports = withMDXEnhanced({
+  layoutPath: 'common/layouts',
+  defaultLayout: false,
+  fileExtensions: ['mdx', 'md'],
+  remarkPlugins: [],
+  rehypePlugins: [],
+  usesSrc: false,
+  extendFrontMatter: {
+    process: (mdxContent, frontMatter) => {},
+    phase: 'prebuild|loader|both',
+  },
+  reExportDataFetching: false,
+})(/* your normal nextjs config */);

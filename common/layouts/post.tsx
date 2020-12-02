@@ -1,7 +1,7 @@
 import { css } from '@emotion/core';
 import * as React from 'react';
-import { ComponentStyles, PostMetaData } from '../common/types';
-import Section from './section';
+import { Section } from '../../components';
+import { ComponentStyles, PostFrontMatter } from '../types';
 
 const styles: ComponentStyles = {
   postHeader: (theme) => css`
@@ -58,22 +58,24 @@ const styles: ComponentStyles = {
   `,
 };
 
-export const PostLayout: React.FC<{ meta: PostMetaData }> = ({
-  meta,
+export const DocsPage: React.FC<{ frontMatter: PostFrontMatter }> = ({
+  frontMatter,
   children,
 }) => (
   <Section as="article">
     <header
-      style={{ backgroundImage: `url(${meta.headerImage})` }}
+      style={{ backgroundImage: `url(${frontMatter.headerImage})` }}
       css={styles.postHeader}
     >
-      <span>{new Date(meta.publishDate).toLocaleDateString()}</span>
-      <h1 css={styles.title}>{meta.title}</h1>
+      <span>
+        {new Date(frontMatter.publishDate).toLocaleDateString()}
+      </span>
+      <h1 css={styles.title}>{frontMatter.title}</h1>
 
-      <p css={styles.excerpt}>{meta.excerpt}</p>
+      <p css={styles.excerpt}>{frontMatter.excerpt}</p>
 
       <ul css={styles.statList}>
-        {meta.tags?.map((tag) => (
+        {frontMatter.tags?.map((tag) => (
           <li key={tag} css={styles.tag}>
             {tag}
           </li>
@@ -85,4 +87,4 @@ export const PostLayout: React.FC<{ meta: PostMetaData }> = ({
   </Section>
 );
 
-export default PostLayout;
+export default DocsPage;

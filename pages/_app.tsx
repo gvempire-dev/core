@@ -1,20 +1,19 @@
-import * as React from 'react';
+import { Global } from '@emotion/core';
+import { MDXProvider } from '@mdx-js/react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { Global } from '@emotion/core';
-import { motion } from 'framer-motion';
-import { MDXProvider } from '@mdx-js/react';
-
+import * as React from 'react';
+import { fadeIn } from '../common/animations';
+import { globalStyles } from '../common/styles';
 import {
-  ThemeProvider,
+  Footer,
+  Header,
   mdxComponents,
   mdxWrapper,
-  Header,
-  Footer,
+  ThemeProvider,
 } from '../components';
-import { globalStyles } from '../common/styles';
-import { fadeIn } from '../common/animations';
 import { dark } from '../themes';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
@@ -28,11 +27,14 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
     .map((path) => path.charAt(0).toUpperCase() + path.slice(1))
     // replace `-` with spaces
     .map((path) => path.replace(/-/g, ' '))
+    // reverse array
+    .reverse()
     // add a sepeartor
     .join(' | ');
 
   return (
     <ThemeProvider theme={dark}>
+      <Global styles={globalStyles} />
       <Head>
         <title>
           {pageTitle
@@ -45,24 +47,34 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
           content="initial-scale=1.0, width=device-width"
         />
       </Head>
-      <Global styles={globalStyles} />
+
       <Header />
-      {pathname.startsWith('/blog/') ? (
-        <MDXProvider components={mdxComponents}>
+
+      <AnimatePresence exitBeforeEnter>
+        {pathname.startsWith('/blog/') ? (
+          <MDXProvider components={mdxComponents} key="mdx">
+            <motion.main
+              css={mdxWrapper}
+              variants={fadeIn}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+            >
+              <Component {...pageProps} />
+            </motion.main>
+          </MDXProvider>
+        ) : (
           <motion.main
-            css={mdxWrapper}
-            variants={fadeIn}
+            key="main"
             initial="initial"
             animate="animate"
+            exit="exit"
           >
             <Component {...pageProps} />
           </motion.main>
-        </MDXProvider>
-      ) : (
-        <main>
-          <Component {...pageProps} />
-        </main>
-      )}
+        )}
+      </AnimatePresence>
+
       <Footer />
     </ThemeProvider>
   );

@@ -1,19 +1,12 @@
-import { PostLayout } from '../../components';
-
-export const meta = {
-  title: 'Using Next.JS API Routes',
-  slug: 'next-js-api-routes',
-  excerpt:
-    'Next.JS comes with a useful feature out of the box, api routes. Files created in the `pages/api/` folder are treated as an endpoint rather than a page. Instead of exporting a React component to display your UI, you can export a function returning, say, a JSON response.',
-  tags: ['nextjs', 'api', 'serverless'],
-  publishDate: '2020-12-03',
-  headerImage:
-    'https://images.pexels.com/photos/4578665/pexels-photo-4578665.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-};
-
-export default ({ children }) => (
-  <PostLayout meta={meta}>{children}</PostLayout>
-);
+---
+layout: 'post'
+title: 'Using Next.JS API Routes'
+slug: 'next-js-api-routes'
+excerpt: 'Next.JS comes with a useful feature out of the box, api routes. Files created in the `pages/api/` folder are treated as an endpoint rather than a page. Instead of exporting a React component to display your UI, you can export a function returning, say, a JSON response.'
+tags: ['nextjs', 'api', 'serverless']
+publishDate: '2020-12-03'
+headerImage: 'https://images.pexels.com/photos/4578665/pexels-photo-4578665.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+---
 
 Next.JS comes with a useful feature out of the box, api routes. Files created in the `pages/api/` folder are treated as an endpoint rather than a page. Instead of exporting a React component to display your UI, you can export a function returning, say, a JSON response.
 

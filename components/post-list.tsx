@@ -7,9 +7,10 @@ import { button, pageBody, pageTitle, tagline } from '../common/styles';
 import {
   ComponentStyles,
   PostEntry,
-  PostMetaData,
+  PostFrontMatter,
 } from '../common/types';
-import postIndex from '../pages/blog/post-index';
+// @ts-ignore
+import { frontMatter as postIndex } from '../pages/blog/*.mdx';
 
 const styles: ComponentStyles = {
   postList: () => css`
@@ -61,7 +62,7 @@ const styles: ComponentStyles = {
   `,
 };
 
-export const PostCard: React.FC<{ metaData: PostMetaData }> = ({
+export const PostCard: React.FC<{ metaData: PostFrontMatter }> = ({
   metaData: { publishDate, title, excerpt, slug, headerImage },
 }) => (
   <motion.article
@@ -108,7 +109,7 @@ const PostList: React.FC<{
     exit="exit"
     css={styles.postList}
   >
-    {Object.entries(postIndex)
+    {Object.entries(postIndex as PostFrontMatter[])
       .sort(sort)
       .filter(filter)
       .filter((_, idx) => (!!limit ? idx < limit : true))
