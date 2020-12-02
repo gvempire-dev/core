@@ -1,5 +1,11 @@
-* 1f1ddd72 (HEAD -> latest) fix: Error: can't resolve env in utils
-* c1d1255b (tag: v0.0.4, origin/latest) v0.0.4
+* a66fd985 (HEAD -> latest) fix: blog post and images
+* 7bd1bcb9 feat remove @mdx/next in favor of next-mdx-enhanced
+* 689cefd3 fix: hero styles and remove contact form
+* 998a1fd7 fix latest blog post
+* 500ccff1 (tag: v0.0.5, origin/latest) v0.0.5
+* 573892e9 update changelog
+* 1f1ddd72 fix: Error: can't resolve env in utils
+* c1d1255b (tag: v0.0.4) v0.0.4
 * 768127b7 update changelog
 * ad5cc3f6 add nextjs-api-routes
 * 59b26743 reorganize
