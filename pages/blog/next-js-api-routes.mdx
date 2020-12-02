@@ -1,0 +1,68 @@
+export const meta = {
+  title: 'Using Next.JS API Routes',
+  slug: 'next-js-api-routes',
+  excerpt:
+    'When developing software, your mindset and approach can make or break your project. Minimalism is something we like to keep in mind on every project.',
+  tags: ['nextjs', 'api', 'serverless'],
+  publishDate: '2020-12-03',
+  headerImage:
+    'https://images.pexels.com/photos/4578665/pexels-photo-4578665.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+};
+
+import { PostLayout } from '../../components';
+
+export default ({ children }) => (
+  <PostLayout meta={meta}>{children}</PostLayout>
+);
+
+Next.JS comes with a useful feature out of the box, api routes. Files created in the `pages/api/` folder are treated as an endpoint rather than a page. Instead of exporting a React component to display your UI, you can export a function returning, say, a JSON response.
+
+For example, if you wanted to return a blog post from your CMS, you could write the following in file `pages/api/post.js` :
+
+```js
+/**
+ * NextJS API function
+ * https://nextjs.org/docs/api-routes/introduction)
+ */
+export default (request, response) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/json');
+  res.end(JSON.stringify({ title: 'My Blog Post' }));
+};
+```
+
+If we wanted to handle multiple methods in a single route, we could check the method property from the request object.
+
+```js
+export default (req, res) => {
+  switch (req.method) {
+    case 'GET':
+      // process GET requests
+      break;
+
+    case 'POST':
+      // process POST requests
+      break;
+
+    default:
+      res.status(405).end(); //Method Not Allowed
+
+      // process every other method
+      break;
+  }
+};
+```
+
+API Routes also support Next.JS [dynamic routes](https://nextjs.org/docs/routing/dynamic-routes) and can be used used to pass a query to our routes.
+
+For example, if we wanted to fetch our posts based on their `uid`, we could write the following in the file `pages/api/post/uid].js`
+
+```js
+export default async (req, res) => {
+  // use the uid from the reauest's query to fetch our post from our CMS
+  const post = await fetchPostFromCMS(req.query.uid);
+
+  res.statusCode = 200;
+  res.end(JSON.stringify(post));
+};
+```

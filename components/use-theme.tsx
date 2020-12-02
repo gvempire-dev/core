@@ -1,8 +1,7 @@
-import * as React from 'react';
 import { ThemeProvider as ETP } from 'emotion-theming';
-
+import * as React from 'react';
 import { Theme } from '../common/types';
-import { primary, funk, deep, swiss } from '../themes';
+import { deep, funk, primary, swiss } from '../themes';
 
 const defaultThemes = {
   primary,
@@ -66,13 +65,13 @@ const ThemeProvider: React.FC<Props> = ({ theme, children }) => {
   };
 
   return (
-    <ThemeActionsContext.Provider value={actions}>
-      <ThemeStateContext.Provider value={state}>
+    <ThemeStateContext.Provider value={state}>
+      <ThemeActionsContext.Provider value={actions}>
         <ThemeStateContext.Consumer>
           {(state: ThemeState) => <ETP theme={state}>{children}</ETP>}
         </ThemeStateContext.Consumer>
-      </ThemeStateContext.Provider>
-    </ThemeActionsContext.Provider>
+      </ThemeActionsContext.Provider>
+    </ThemeStateContext.Provider>
   );
 };
 

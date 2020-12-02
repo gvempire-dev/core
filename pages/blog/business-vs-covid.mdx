@@ -3,16 +3,17 @@ export const meta = {
   slug: 'business-vs-covid',
   excerpt:
     'For small business owners suddenly deprived of customers, support from patrons can can spell the difference between surviving the pandemic and closing their doors forever.',
-  author: 'Khari Johnson',
-  authorLink: 'https://gvempire.dev',
-  publishDate: 1586207691268,
-  timeToRead: '3 min',
+  publishDate: '2020-04-07',
   tags: ['gvempire', 'covid-19', 'small bussiness'],
   headerImage:
     'https://images.pexels.com/photos/3970333/pexels-photo-3970333.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
 };
 
-# How does a business fight a virus?
+import { PostLayout } from '../../components';
+
+export default ({ children }) => (
+  <PostLayout meta={meta}>{children}</PostLayout>
+);
 
 We were checking up on some of our favorite local businesses and noticed that many websites are down and most businesses are closed.
 In a time where social distancing is the norm, we understand that times are hard right now with COVID-19.
@@ -28,7 +29,7 @@ pandemic and closing their doors forever.
 We're bringing you a few tips (outside of government aid) that could
 help you make it through the other side.
 
-## 1. Sell Gift Cards
+### 1. Sell Gift Cards
 
 Not only can gift cards provide you with a little extra income in these
 uncertain times, they allow you customer to have an invested experience
@@ -41,7 +42,7 @@ in your company.
 >
 > -Paula Flynn, founder of the [Shopkeepers](https://theshopkeepers.com)
 
-## 2. Pick up and Delivery Options
+### 2. Pick up and Delivery Options
 
 If your business models can support it, offering pick-up and delivery
 options for customers to buy your products without direct contact with
@@ -51,7 +52,7 @@ New York state, for example, is loosening restrictions on alcohol sales
 so local restaurants, along with breweries and distilleries, can make
 booze available for curbside pickup or delivery.
 
-## 3. Sell Online
+### 3. Sell Online
 
 Sell your products or services online with services like Shopify or
 Squarespace. Selling online is an excellent way to keep your employees
@@ -62,7 +63,7 @@ and your customers safe while still maintaining sales.
 >
 > -[Statista.com](https://www.statista.com/statistics/379112/e-commerce-share-of-retail-sales-in-us/)
 
-## 4. Host Online Webinars and Classes
+### 4. Host Online Webinars and Classes
 
 With everyone staying home these days, a lot of people are bored. Host
 and exciting webinar or online class around your product with Zoom.

@@ -81,7 +81,7 @@ const styles: ComponentStyles = {
     ${commonStyles.pageBody(theme)};
     line-height: ${theme.lineHeights.taller};
     max-width: 80ch;
-    margin: 0 auto;
+    margin: ${theme.space[6]} auto;
   `,
   thematicBreak: () => css``,
   blockquote: (theme) => css`
@@ -123,8 +123,12 @@ const styles: ComponentStyles = {
     margin: ${theme.space[2]} ${theme.space[4]};
   `,
   pre: (theme) => css`
-    font-family: ${theme.fonts.mono};
-    margin: ${theme.space[4]} auto;
+    margin: ${theme.space[12]} auto;
+
+    & * {
+      font-family: ${theme.fonts.mono};
+      letter-spacing: ${theme.letterSpacings['wide']};
+    }
   `,
   code: (theme) => css`
     font-family: ${theme.fonts.mono};
@@ -140,10 +144,10 @@ const styles: ComponentStyles = {
   `,
   inlineCode: (theme) => css`
     background-color: ${theme.colors.whiteAlpha[300]};
-    padding: ${theme.space[2]} ${theme.space[2]};
+    padding: ${theme.space[1]} ${theme.space[2]};
     font-family: ${theme.fonts.mono};
     line-height: ${theme.lineHeights.taller};
-    color: ${theme.colors.highlight};
+    color: ${theme.colors.secondary};
   `,
   hr: (theme) => css`
     margin: ${theme.space[8]} auto;

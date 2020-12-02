@@ -2,17 +2,20 @@ export const meta = {
   title: 'A Look into 2020',
   slug: 'a-look-into-2020',
   excerpt:
-    'In this issue we discuss past failures, big wins, and all of the things you can be expecting from us in the next year',
-  author: 'Khari Johnson',
-  authorLink: 'https://gvempire.dev',
-  publishDate: 1580591795000,
-  timeToRead: '3 min',
+    'In this issue we discuss past failures, big wins, and all of the things you can be expecting from us in the next year.',
+  publishDate: '2020-01-03',
   tags: ['gvempire', 'recap', 'retrospective'],
   headerImage:
     'https://images.pexels.com/photos/282909/pexels-photo-282909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
 };
 
-# Welcome to the Empire
+import { PostLayout } from '../../components';
+
+export default ({ children }) => (
+  <PostLayout meta={meta}>{children}</PostLayout>
+);
+
+## Welcome to the Empire
 
 It's been a little over a year since we banded together and created GVEMPIRE as you see it today.
 It's been one long adventure since then with many different kind of projects, problems, and people.
@@ -24,11 +27,11 @@ We've looked back at our mistakes (as well as our wins) and tried to further dev
 
 This leads us to our first update of the year...
 
-## A New Workflow
+### A New Workflow
 
 We've talked and listened to clients and revamped our entire process to make it easier for everyone involved.
 
-### Notion
+#### Notion
 
 From now on, all of our projects start with a [Notion](https://notion.so) doc similar to this one.
 
@@ -41,7 +44,7 @@ Inside, you can find everything you need related to the project including.
 - Design Files
 - Links/Accounts for services attached to the project
 
-### Slack
+#### Slack
 
 Along with a notion document, every project will get it's own [Slack](https://slack.com) channel in our internal channel.
 This allows you to have direct access to our team whenever you need them and allows us to move away from our current email/slack system and towards a more efficient workflow.
@@ -54,7 +57,7 @@ as we build out your application.
 
 > [Schedule](https://calendy.com/gvempire/discover) your **FREE** 1-on-1 consultation.
 
-## A New Home
+### A New Home
 
 Sometime in the next few weeks you're going see a new look around here.
 
@@ -69,7 +72,7 @@ Watch out for the announcement on social media.
 
 Which lead us on to our next update...
 
-## New Open Source Projects
+### New Open Source Projects
 
 We're happy to announce two new contributions to the Open Source
 Community!
@@ -86,16 +89,6 @@ the demos at [recruit.gvempire.dev](https://recruit.gvempire.dev) and
 [sass.gvempire.dev](https://sass.gvempire.dev).
 
 Feel free to open issues, and contribute with your ideas.
-
-## Behind the Scenes
-
-This year, we want to bring you a closer look into GVEMPIRE.
-
-> _blog posts, youtube videos, live streams and more_
-
-We want to share what we've learned after over a year in business.
-We want you to know what it's like to build software in today's climate.
-We want to grow our community to more than previous clients.
 
 If you're not already, be sure to follow us on all social media platforms @gvempire.
 

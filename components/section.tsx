@@ -1,14 +1,14 @@
-import * as React from 'react';
 import { motion } from 'framer-motion';
-
-import {
-  tagline as taglineStyles,
-  section,
-  headerTitle,
-  headerLead,
-  sectionHeader,
-} from '../common/styles';
+import * as React from 'react';
 import { fadeWithChildren, slideDown } from '../common/animations';
+import {
+  headerLead,
+  headerTitle,
+  section,
+  sectionHeader,
+  tagline as taglineStyles,
+} from '../common/styles';
+import { MotionTypes } from '../common/types';
 
 const Section: React.FC<{
   tagline?: string | React.ReactNode;
@@ -16,29 +16,41 @@ const Section: React.FC<{
   lead?: string | React.ReactNode;
   alternate?: boolean;
   children?: React.ReactNode;
-}> = ({ tagline, title, lead, alternate, children }) => (
-  <motion.section
-    css={section}
-    className={`${alternate ? 'alternate' : 'default'}`}
-    variants={fadeWithChildren}
-    initial="initial"
-    animate="animate"
-  >
-    {(tagline || title || lead) && (
-      <motion.header
-        css={sectionHeader}
-        variants={slideDown}
-        initial="initial"
-        animate="animate"
-      >
-        {tagline && <span css={taglineStyles}>{tagline}</span>}
-        {title && <h2 css={headerTitle}>{title}</h2>}
-        {lead && <p css={headerLead}>{lead}</p>}
-      </motion.header>
-    )}
+  as?: MotionTypes;
+}> = ({
+  tagline,
+  title,
+  lead,
+  alternate,
+  children,
+  as = 'section',
+}) => {
+  const MotionComp = motion[as];
 
-    {children}
-  </motion.section>
-);
+  return (
+    <MotionComp
+      css={section}
+      className={`${alternate ? 'alternate' : 'default'}`}
+      variants={fadeWithChildren}
+      initial="initial"
+      animate="animate"
+    >
+      {(tagline || title || lead) && (
+        <motion.header
+          css={sectionHeader}
+          variants={slideDown}
+          initial="initial"
+          animate="animate"
+        >
+          {tagline && <span css={taglineStyles}>{tagline}</span>}
+          {title && <h2 css={headerTitle}>{title}</h2>}
+          {lead && <p css={headerLead}>{lead}</p>}
+        </motion.header>
+      )}
+
+      {children}
+    </MotionComp>
+  );
+};
 
 export default Section;

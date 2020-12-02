@@ -3,4 +3,5 @@ export default {
   'business-vs-covid': require('./business-vs-covid.mdx').meta,
   'minimalism-in-development': require('./minimalism-in-development.mdx')
     .meta,
+  'next-js-api-routes': require('./next-js-api-routes.mdx').meta,
 };

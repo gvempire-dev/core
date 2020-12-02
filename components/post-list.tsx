@@ -2,10 +2,14 @@ import { css } from '@emotion/core';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import * as React from 'react';
-import postList from '../blog/post-index';
 import { fadeIn, fadeWithChildren } from '../common/animations';
 import { button, pageBody, pageTitle, tagline } from '../common/styles';
-import { ComponentStyles } from '../common/types';
+import {
+  ComponentStyles,
+  PostEntry,
+  PostMetaData,
+} from '../common/types';
+import postIndex from '../pages/blog/post-index';
 
 const styles: ComponentStyles = {
   postCard: (theme) => css`
@@ -50,7 +54,7 @@ const styles: ComponentStyles = {
     justify-content: center;
     padding: ${theme.space[8]} ${theme.space[4]};
   `,
-  postCardTagline: (theme) => css`
+  postCardDate: (theme) => css`
     ${tagline(theme)};
 
     font-size: ${theme.fontSizes['md']};
@@ -61,25 +65,45 @@ const styles: ComponentStyles = {
     font-weight: ${theme.fontWeights.semibold};
     margin-bottom: ${theme.space[2]};
   `,
-  postCardBody: (theme) => css`
+  postCardExcerpt: (theme) => css`
     ${pageBody(theme)};
     margin-bottom: ${theme.space[8]};
   `,
 };
 
-type PostMetaData = {
-  title: string;
-  slug: string;
-  excerpt: string;
-  publishDate: number;
-  author?: string;
-  authorLink?: string;
-  timeToRead?: string;
-  tags?: string[];
-  headerImage?: string;
-};
+export const PostCard: React.FC<{ metaData: PostMetaData }> = ({
+  metaData: { publishDate, title, excerpt, slug, headerImage },
+}) => (
+  <motion.article
+    css={styles.postCard}
+    variants={fadeIn}
+    initial="initial"
+    animate="animate"
+    exit="exit"
+  >
+    <header css={styles.postCardContent}>
+      <span css={styles.postCardDate}>
+        {new Date(publishDate).toDateString()}
+      </span>
+      <h3 css={styles.postCardTitle}>{title} </h3>
+      <p css={styles.postCardExcerpt}>{excerpt}</p>
 
-type PostEntry = [string, PostMetaData];
+      <span css={styles.postCardActions}>
+        <Link href={`/blog/${slug}`} passHref>
+          <a>
+            <button css={button}>Read More</button>
+          </a>
+        </Link>
+      </span>
+    </header>
+
+    {headerImage ? (
+      <img css={styles.postCardImage} src={headerImage} alt={title} />
+    ) : (
+      <img src="/logo__light.svg" css={styles.postCardImage} />
+    )}
+  </motion.article>
+);
 
 const PostList: React.FC<{
   sort?: (a: PostEntry, b: PostEntry) => number;
@@ -95,8 +119,9 @@ const PostList: React.FC<{
       variants={fadeWithChildren}
       initial="initial"
       animate="animate"
+      exit="exit"
     >
-      {Object.entries(postList)
+      {Object.entries(postIndex)
         .sort(sort)
         .filter(filter)
         .filter((_, idx) => idx < limit)
@@ -106,46 +131,5 @@ const PostList: React.FC<{
     </motion.section>
   );
 };
-
-export const PostCard: React.FC<{
-  metaData: {
-    publishDate: number;
-    title: string;
-    excerpt: string;
-    slug: string;
-    headerImage: string;
-  };
-}> = ({
-  metaData: { publishDate, title, excerpt, slug, headerImage },
-}) => (
-  <motion.article
-    css={styles.postCard}
-    variants={fadeIn}
-    initial="initial"
-    animate="animate"
-  >
-    <header css={styles.postCardContent}>
-      <span css={styles.postCardTagline}>
-        {new Date(publishDate).toDateString()}
-      </span>
-      <h3 css={styles.postCardTitle}>{title} </h3>
-      <p css={styles.postCardBody}>{excerpt}</p>
-
-      <span css={styles.postCardActions}>
-        <Link href={`/blog/${slug}`} passHref>
-          <a>
-            <button css={button}>Read More</button>
-          </a>
-        </Link>
-      </span>
-    </header>
-
-    {headerImage ? (
-      <img css={styles.postCardImage} src={headerImage} alt={title} />
-    ) : (
-      <div css={styles.postCardImage} />
-    )}
-  </motion.article>
-);
 
 export default PostList;

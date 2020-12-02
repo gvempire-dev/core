@@ -1,6 +1,6 @@
 import * as React from 'react';
-import BlogPage from '../blog';
 import AboutPage from '../pages/about';
+import BlogPage from '../pages/blog';
 import ContactPage from '../pages/contact';
 import IndexPage from '../pages/index';
 import ServicesPage from '../pages/services';
