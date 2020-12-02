@@ -12,17 +12,14 @@ export type User = {
 };
 
 export type PostFrontMatter = {
+  __resourcePath: string;
   title: string;
-  slug: string;
-  excerpt: string;
-  publishDate: number;
-  author?: string;
+  date: string | number;
+  excerpt?: string;
   tags?: string[];
   headerImage?: string;
   headerAlt?: string;
 };
-
-export type PostEntry = [string, PostFrontMatter];
 
 export type StyledWithTheme = InterpolationWithTheme<Theme>;
 export type ThemedStyles = (theme: Theme) => SerializedStyles;

@@ -1,6 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { SitemapStream, streamToPromise } from 'sitemap';
-import posts from '../blog/post-index';
+import { getPostSlug } from '../../common/layouts/post';
+// @ts-ignore
+import posts from '../blog/*.mdx';
+import { PostFrontMatter } from './../../common/types';
 
 const staticPages = [
   { title: 'Home', url: '/' },
@@ -26,10 +29,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     // Create each URL row for each blog post
-    Object.entries(posts).forEach(([name, metadata]) => {
+    Object.entries(posts).forEach(([name, frontMatter]) => {
       smStream.write({
         title: name,
-        url: `/blog/${metadata.slug}`,
+        url: `/blog/${getPostSlug(frontMatter as PostFrontMatter)}`,
         changefreq: 'weekly',
         priority: 0.9,
       });

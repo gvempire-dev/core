@@ -1,23 +1,22 @@
-import * as React from 'react';
-import Link from 'next/link';
 import { css } from '@emotion/core';
+import Link from 'next/link';
+import * as React from 'react';
 import {
   Accordion,
   AccordionItem,
-  AccordionItemHeading,
   AccordionItemButton,
+  AccordionItemHeading,
   AccordionItemPanel,
 } from 'react-accessible-accordion';
-
-import { ComponentStyles } from '../common/types';
 import {
-  pageBody,
   button,
   flex,
   flexItem,
   flexItemImage,
   flexItemTitle,
+  pageBody,
 } from '../common/styles';
+import { ComponentStyles } from '../common/types';
 import { Hero, Section } from '../components';
 
 const values = [
@@ -25,13 +24,13 @@ const values = [
     title: 'Good Vibes',
     text:
       "We communicate with each other honestly, even if the truth violates one's ego. We believe that in the long term only through good and honest communication with each other we can generate added value for our clients.",
-    image: '/transparency.svg',
+    image: '/images/transparency.svg',
   },
   {
     title: 'Greater Ventures',
     text:
       "We're aiming to make the world a better place, one interface at a time. Each and every project we take on has a single aim to do something better, to make something greater, and to build something everyone involved is proud of.",
-    image: '/rocket.svg',
+    image: '/images/rocket.svg',
   },
 ];
 

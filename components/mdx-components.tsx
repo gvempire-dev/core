@@ -10,11 +10,13 @@ const CodeBlock: React.FC<{
   className?: any;
   [key: string]: any;
 }> = (props: any) => {
+  const lang = props.className.split(' ')[0].split('-')[1];
+
   return (
     <Highlight
       {...defaultProps}
       code={props.children}
-      language="javascript"
+      language={lang === 'js' ? 'javascript' : lang}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => {
         return (
@@ -23,11 +25,11 @@ const CodeBlock: React.FC<{
             style={{ ...style, padding: '20px' }}
           >
             {tokens.map((line, i) => (
-              <div key={i} {...getLineProps({ line, key: i })}>
+              <p key={i} {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (
                   <span key={key} {...getTokenProps({ token, key })} />
                 ))}
-              </div>
+              </p>
             ))}
           </pre>
         );

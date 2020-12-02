@@ -7,11 +7,18 @@ module.exports = withMDXEnhanced({
   layoutPath: 'common/layouts',
   defaultLayout: false,
   fileExtensions: ['mdx', 'md'],
-  remarkPlugins: [],
+  remarkPlugins: [
+    require('remark-autolink-headings'),
+    require('remark-slug'),
+    require('remark-code-titles'),
+  ],
   rehypePlugins: [],
   usesSrc: false,
   extendFrontMatter: {
-    process: (mdxContent, frontMatter) => {},
+    process: (mdxContent, frontMatter) => ({
+      wordCount: mdxContent.split(/\s+/gu).length,
+      readingTime: readingTime(mdxContent),
+    }),
     phase: 'prebuild|loader|both',
   },
   reExportDataFetching: false,

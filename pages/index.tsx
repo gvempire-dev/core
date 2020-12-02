@@ -21,21 +21,21 @@ export const formula = [
       time-consuming and resource heavy queries slowing down your
       site. Static sites can be up to 10x faster, with
       benefits for the UX and SEO rankings.`,
-    image: '/modern.svg',
+    image: '/images/modern.svg',
   },
   {
     title: 'Minimalistic',
     text: `We like to keep things simple. This ensures that your
       site has a longlasting uptime without too much of a need
       for updates and mainteneance`,
-    image: '/minimal.svg',
+    image: '/images/minimal.svg',
   },
   {
     title: 'Adventureful',
     text: `Our website are stable, safe,
       and scalable. They provide a better experience for your users and
       little to no downtime lets your website work for you.`,
-    image: '/rocket.svg',
+    image: '/images/rocket.svg',
   },
 ];
 
@@ -63,19 +63,19 @@ export const projectTypes = [
     title: 'E-Commerce',
     text:
       "Whether you're selling music, online courses, or triangles -- we've got a bespoke website for you and your customers.",
-    image: '/e-commerce.svg',
+    image: '/images/e-commerce.svg',
   },
   {
     title: 'Static Sites',
     text:
       'Get new customers with a faster website and higher SEO chances. We build them with proven technologies like React and Gatsby',
-    image: '/static-websites.svg',
+    image: '/images/static-websites.svg',
   },
   {
     title: "PWA's",
     text:
       'Have your own app availble on all platforms. Progressive Web Apps save you money and time with great performance and low hosting costs.',
-    image: '/progressive-web-app.svg',
+    image: '/images/progressive-web-app.svg',
   },
 ];
 
@@ -85,14 +85,14 @@ export const testimonials = [
     href: 'https://talisamusic.com',
     text:
       'GVEMPIRE helped me out by revamping my website for me. The result was amazing! They came up with some fresh ideas that really made my website pop. One thing I liked the most was that KJ asked me what I wanted exactly and was willing to work with my needs. The whole experience was awesome, I love working with people who want to help other artists reach their goals. I would recommend GVEMPIRE to anyone who needs a website made!',
-    image: '/talisamusic.png',
+    image: '/images/talisamusic.png',
   },
   {
     name: 'Arnetris Green',
     href: 'https://juicyfits.com',
     text:
       'It was a pleasure working with you. I appreciate your patience with me and your continued support. Thanks for answering all of my calls.',
-    image: '/juicyfits.png',
+    image: '/images/juicyfits.png',
   },
 ];
 

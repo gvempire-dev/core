@@ -3,12 +3,9 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import * as React from 'react';
 import { fadeIn, fadeWithChildren } from '../common/animations';
+import { getPostSlug } from '../common/layouts/post';
 import { button, pageBody, pageTitle, tagline } from '../common/styles';
-import {
-  ComponentStyles,
-  PostEntry,
-  PostFrontMatter,
-} from '../common/types';
+import { ComponentStyles, PostFrontMatter } from '../common/types';
 // @ts-ignore
 import { frontMatter as postIndex } from '../pages/blog/*.mdx';
 
@@ -62,14 +59,14 @@ const styles: ComponentStyles = {
   `,
 };
 
-export const PostCard: React.FC<{ metaData: PostFrontMatter }> = ({
-  metaData: { publishDate, title, excerpt, slug, headerImage },
+export const PostCard: React.FC<{ frontMatter: PostFrontMatter }> = ({
+  frontMatter,
 }) => (
   <motion.article
     css={styles.postCard}
     style={{
-      background: !!headerImage
-        ? `url(${headerImage})`
+      background: !!frontMatter.headerImage
+        ? `url(${frontMatter.headerImage})`
         : '/logo__light.svg',
     }}
     variants={fadeIn}
@@ -78,13 +75,13 @@ export const PostCard: React.FC<{ metaData: PostFrontMatter }> = ({
     exit="exit"
   >
     <span css={styles.postCardDate}>
-      {new Date(publishDate).toDateString()}
+      {new Date(frontMatter.date).toLocaleDateString()}
     </span>
-    <h3 css={styles.postCardTitle}>{title} </h3>
-    <p css={styles.postCardExcerpt}>{excerpt}</p>
+    <h3 css={styles.postCardTitle}>{frontMatter.title} </h3>
+    <p css={styles.postCardExcerpt}>{frontMatter.excerpt}</p>
 
     <span css={styles.postCardActions}>
-      <Link href={`/blog/${slug}`} passHref>
+      <Link href={`/blog/${getPostSlug(frontMatter)}`} passHref>
         <a>
           <button css={button}>Read More</button>
         </a>
@@ -94,11 +91,17 @@ export const PostCard: React.FC<{ metaData: PostFrontMatter }> = ({
 );
 
 const PostList: React.FC<{
-  sort?: (a: PostEntry, b: PostEntry) => number;
-  filter?: (a: PostEntry) => boolean;
+  sort?: (
+    a: [string, PostFrontMatter],
+    b: [string, PostFrontMatter],
+  ) => number;
+  filter?: (a: [string, PostFrontMatter]) => boolean;
   limit?: number;
 }> = ({
-  sort = (a, b) => (a[1].publishDate < b[1].publishDate ? 1 : -1),
+  sort = (a, b) =>
+    new Date(a[1].date).getTime() < new Date(b[1].date).getTime()
+      ? 1
+      : -1,
   filter = () => true,
   limit,
 }) => (
@@ -113,8 +116,8 @@ const PostList: React.FC<{
       .sort(sort)
       .filter(filter)
       .filter((_, idx) => (!!limit ? idx < limit : true))
-      .map(([name, metaData]) => (
-        <PostCard metaData={metaData} key={`post-card-${name}`} />
+      .map(([name, frontMtter]) => (
+        <PostCard frontMatter={frontMtter} key={`post-card-${name}`} />
       ))}
   </motion.section>
 );

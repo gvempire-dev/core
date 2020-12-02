@@ -44,7 +44,7 @@ const styles: ComponentStyles = {
   `,
   author: () => css``,
   publishDate: () => css``,
-  statList: () => css`
+  tagList: () => css`
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -58,6 +58,9 @@ const styles: ComponentStyles = {
   `,
 };
 
+export const getPostSlug = (post: PostFrontMatter) =>
+  post.__resourcePath.replace('blog/', '').replace('.mdx', '');
+
 export const DocsPage: React.FC<{ frontMatter: PostFrontMatter }> = ({
   frontMatter,
   children,
@@ -67,14 +70,14 @@ export const DocsPage: React.FC<{ frontMatter: PostFrontMatter }> = ({
       style={{ backgroundImage: `url(${frontMatter.headerImage})` }}
       css={styles.postHeader}
     >
-      <span>
-        {new Date(frontMatter.publishDate).toLocaleDateString()}
-      </span>
+      <span>{new Date(frontMatter.date).toLocaleDateString()}</span>
       <h1 css={styles.title}>{frontMatter.title}</h1>
 
-      <p css={styles.excerpt}>{frontMatter.excerpt}</p>
+      {frontMatter.excerpt && (
+        <p css={styles.excerpt}>{frontMatter.excerpt}</p>
+      )}
 
-      <ul css={styles.statList}>
+      <ul css={styles.tagList}>
         {frontMatter.tags?.map((tag) => (
           <li key={tag} css={styles.tag}>
             {tag}

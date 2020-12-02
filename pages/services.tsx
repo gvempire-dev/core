@@ -1,16 +1,15 @@
-import * as React from 'react';
-import Link from 'next/link';
 import { css } from '@emotion/core';
-
-import { ComponentStyles } from '../common/types';
+import Link from 'next/link';
+import * as React from 'react';
 import {
+  button,
   flex,
   flexItem,
   flexItemImage,
   flexItemTitle,
   pageBody,
-  button,
 } from '../common/styles';
+import { ComponentStyles } from '../common/types';
 import { Hero, Section } from '../components';
 import { projectTypes } from './index';
 
@@ -23,7 +22,7 @@ const workflow = [
               got your back! We’ll get to know what’s most important for
               your success and have it in mind when choosing the best
               tech stack.`,
-    image: '/planning.svg',
+    image: '/images/planning.svg',
   },
 
   {
@@ -34,7 +33,7 @@ const workflow = [
   options with their possible upsides and downsides. We
   leave the final decision to you, but we’ll always be close
   to help with advice.`,
-    image: '/tech-stack.svg',
+    image: '/images/tech-stack.svg',
   },
 
   {
@@ -47,7 +46,7 @@ const workflow = [
   used during the development stage. You also get to choose
   how often you’d like to receive project updates from us
   and in what form should they be in.`,
-    image: '/dev-environment.svg',
+    image: '/images/dev-environment.svg',
   },
 
   {
@@ -59,7 +58,7 @@ const workflow = [
   put together in real time. You’ll also have access to our
   time tracking app for your project to see how much time'
   each task consumed.`,
-    image: '/project-management.svg',
+    image: '/images/project-management.svg',
   },
 
   {
@@ -70,7 +69,7 @@ const workflow = [
   developing the product. We handle their additional feature
   requests and ongoing web architecture maintenance, so they
   could focus on growing their business.`,
-    image: '/goodbye.svg',
+    image: '/images/goodbye.svg',
   },
 ];
 

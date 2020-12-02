@@ -126,7 +126,7 @@ const Header: React.FC = () => {
         <Link href="/" passHref>
           <a>
             <button css={styles.logo} aria-label="go home">
-              <img src="/logo__light.svg" alt="gvempire.dev" />
+              <img src="/logo/logo__light.svg" alt="gvempire.dev" />
               GVEMPIRE
             </button>
           </a>
@@ -152,17 +152,6 @@ const Header: React.FC = () => {
               </a>
             </Link>
           ))}
-
-          {/* <Link href="/contact" passHref>
-            <a>
-              <button
-                css={styles.navButton}
-                className="outline success"
-              >
-                work with us
-              </button>
-            </a>
-          </Link> */}
         </nav>
       </div>
     </motion.header>
