@@ -1,15 +1,15 @@
+import { PostLayout } from '../../components';
+
 export const meta = {
   title: 'Using Next.JS API Routes',
   slug: 'next-js-api-routes',
   excerpt:
-    'When developing software, your mindset and approach can make or break your project. Minimalism is something we like to keep in mind on every project.',
+    'Next.JS comes with a useful feature out of the box, api routes. Files created in the `pages/api/` folder are treated as an endpoint rather than a page. Instead of exporting a React component to display your UI, you can export a function returning, say, a JSON response.',
   tags: ['nextjs', 'api', 'serverless'],
   publishDate: '2020-12-03',
   headerImage:
     'https://images.pexels.com/photos/4578665/pexels-photo-4578665.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
 };
-
-import { PostLayout } from '../../components';
 
 export default ({ children }) => (
   <PostLayout meta={meta}>{children}</PostLayout>
@@ -64,5 +64,58 @@ export default async (req, res) => {
 
   res.statusCode = 200;
   res.end(JSON.stringify(post));
+};
+```
+
+## Bonus
+
+One great use for API functions is creating a sitemap for your Next.JS project. The function below is the very same code for our website here.
+
+```js
+import { NextApiRequest, NextApiResponse } from 'next';
+import { SitemapStream, streamToPromise } from 'sitemap';
+import posts from '../blog/post-index';
+
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+  try {
+    const smStream = new SitemapStream({
+      hostname: `https://${req.headers.host}`,
+    });
+
+    // Create each URL row for each static page
+    staticPages.forEach((page) => {
+      smStream.write({
+        changefreq: 'monthly',
+        priority: 0.5,
+        ...page,
+      });
+    });
+
+    // Create each URL row for each blog post
+    Object.entries(posts).forEach(([name, metadata]) => {
+      smStream.write({
+        title: name,
+        url: `/blog/${metadata.slug}`,
+        changefreq: 'weekly',
+        priority: 0.9,
+      });
+    });
+
+    // End sitemap stream
+    smStream.end();
+
+    // XML sitemap string
+    const sitemapOutput = (await streamToPromise(smStream)).toString();
+
+    // Change headers
+    res.writeHead(200, {
+      'Content-Type': 'application/xml',
+    });
+
+    res.end(sitemapOutput);
+  } catch (e) {
+    console.log(e);
+    res.send(JSON.stringify(e));
+  }
 };
 ```

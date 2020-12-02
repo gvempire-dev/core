@@ -1,3 +1,5 @@
+import { PostLayout } from '../../components';
+
 export const meta = {
   title: 'A Look into 2020',
   slug: 'a-look-into-2020',
@@ -8,8 +10,6 @@ export const meta = {
   headerImage:
     'https://images.pexels.com/photos/282909/pexels-photo-282909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
 };
-
-import { PostLayout } from '../../components';
 
 export default ({ children }) => (
   <PostLayout meta={meta}>{children}</PostLayout>

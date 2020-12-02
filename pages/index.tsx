@@ -1,40 +1,38 @@
-import * as React from 'react';
-import Link from 'next/link';
 import { css } from '@emotion/core';
-
-import { ComponentStyles } from '../common/types';
+import Link from 'next/link';
+import * as React from 'react';
 import {
-  centered,
-  pageBody,
   button,
-  quoteCite,
+  centered,
   flex,
   flexItem,
   flexItemImage,
   flexItemTitle,
+  pageBody,
+  quoteCite,
 } from '../common/styles';
-
-import { PostList, Hero, Section } from '../components';
+import { ComponentStyles } from '../common/types';
+import { Hero, PostList, Section } from '../components';
 
 export const formula = [
   {
     title: 'Modern',
     text: `Often times, there’s no
-      time-consuming and resource heavy queries slowing down your 
-      site. Static sites can be up to 10x faster, with 
+      time-consuming and resource heavy queries slowing down your
+      site. Static sites can be up to 10x faster, with
       benefits for the UX and SEO rankings.`,
     image: '/modern.svg',
   },
   {
     title: 'Minimalistic',
     text: `We like to keep things simple. This ensures that your
-      site has a longlasting uptime without too much of a need 
+      site has a longlasting uptime without too much of a need
       for updates and mainteneance`,
     image: '/minimal.svg',
   },
   {
     title: 'Adventureful',
-    text: `Our website are stable, safe, 
+    text: `Our website are stable, safe,
       and scalable. They provide a better experience for your users and
       little to no downtime lets your website work for you.`,
     image: '/rocket.svg',
@@ -284,8 +282,8 @@ const IndexPage = () => {
         </div>
       </Section>
 
-      <Section title="Hot off the Blog" tagline="stories">
-        <PostList />
+      <Section title="Hot off the Blog" tagline="featured">
+        <PostList limit={2} />
       </Section>
 
       <Hero

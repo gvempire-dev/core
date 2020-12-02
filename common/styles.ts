@@ -1,6 +1,5 @@
 import { css, keyframes } from '@emotion/core';
 import emotionReset from 'emotion-reset';
-
 import { ThemedStyles } from './types';
 
 /**
@@ -9,7 +8,7 @@ import { ThemedStyles } from './types';
  *
  */
 
-export const slide = keyframes` 
+export const slide = keyframes`
   0% {
       background-position: 0% 50%;
   }
