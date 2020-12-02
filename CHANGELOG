@@ -1,6 +1,9 @@
-* ad5cc3f6 (HEAD -> latest) add nextjs-api-routes
+* 1f1ddd72 (HEAD -> latest) fix: Error: can't resolve env in utils
+* c1d1255b (tag: v0.0.4, origin/latest) v0.0.4
+* 768127b7 update changelog
+* ad5cc3f6 add nextjs-api-routes
 * 59b26743 reorganize
-* 7feeedd5 (tag: v0.0.3, origin/latest) v0.0.3
+* 7feeedd5 (tag: v0.0.3) v0.0.3
 * bec60749 update changelog
 * c7802231 (tag: v0.0.2) v0.0.2
 * 5f05a669 update changelog
