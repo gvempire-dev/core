@@ -1,21 +1,20 @@
-import * as React from 'react';
-import Link from 'next/link';
 import { css } from '@emotion/core';
-
-import { ComponentStyles } from '../common/types';
+import Link from 'next/link';
+import * as React from 'react';
 import {
-  pageTitle,
-  contentContainer,
-  section,
-  sectionHeader,
   button,
-  link,
-  formWrapper,
-  formHeader,
+  contentContainer,
   formActions,
   formFieldset,
+  formHeader,
   formInput,
+  formWrapper,
+  link,
+  pageTitle,
+  section,
+  sectionHeader,
 } from '../common/styles';
+import { ComponentStyles } from '../common/types';
 import useActiveLinks from './use-active-links';
 
 const styles: ComponentStyles = {
@@ -90,7 +89,7 @@ const Footer: React.FC = () => {
     <footer css={styles.wrapper}>
       <header css={sectionHeader}>
         <div css={styles.logo}>
-          <img src="/logo__light.svg" alt="gvempire.dev" />
+          <img src="/logo/logo__light.svg" alt="gvempire.dev" />
           <div>Good Vibes and Greater Ventures</div>
         </div>
 

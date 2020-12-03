@@ -7,7 +7,7 @@ const dark: Theme = {
   colors: {
     ...theme.colors,
     text: 'hsl(275, 90%, 100%)',
-    background: 'hsl(275, 0%, 10%)',
+    background: 'hsl(254, 25%, 15%)',
     primary: 'hsl(275, 100%, 40%)',
     secondary: 'hsl(275, 100%, 80%)',
     highlight: 'hsl(275, 40%, 75%)',
