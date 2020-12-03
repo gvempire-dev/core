@@ -1,5 +1,7 @@
-* 7a417589 (HEAD -> latest) cahge theme bg
-* 71332712 (tag: v0.0.6, origin/latest) v0.0.6
+* d9e8a1a3 (HEAD -> latest, tag: v0.0.7, origin/latest) v0.0.7
+* 9f8fd977 update changelog
+* 7a417589 cahge theme bg
+* 71332712 (tag: v0.0.6) v0.0.6
 * 02178daf update changelog
 * a66fd985 fix: blog post and images
 * 7bd1bcb9 feat remove @mdx/next in favor of next-mdx-enhanced
