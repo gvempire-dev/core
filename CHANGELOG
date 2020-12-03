@@ -1,8 +1,11 @@
-* a66fd985 (HEAD -> latest) fix: blog post and images
+* 7a417589 (HEAD -> latest) cahge theme bg
+* 71332712 (tag: v0.0.6, origin/latest) v0.0.6
+* 02178daf update changelog
+* a66fd985 fix: blog post and images
 * 7bd1bcb9 feat remove @mdx/next in favor of next-mdx-enhanced
 * 689cefd3 fix: hero styles and remove contact form
 * 998a1fd7 fix latest blog post
-* 500ccff1 (tag: v0.0.5, origin/latest) v0.0.5
+* 500ccff1 (tag: v0.0.5) v0.0.5
 * 573892e9 update changelog
 * 1f1ddd72 fix: Error: can't resolve env in utils
 * c1d1255b (tag: v0.0.4) v0.0.4
