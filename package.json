@@ -14,7 +14,7 @@
     "deploy": "npm-run-all -l -s deploy:live",
     "deploy:live": "now deploy",
     "deploy:prod": "now deploy --prod",
-    "changelog": "git log --all --graph --decorate --oneline > CHANGELOG; git add .; git commit -m \"update changelog\"; yarn version --$1; git push --follow-tags; echo \"Released $npm_package_version\"",
+    "changelog": "git log --all --graph --decorate --oneline > CHANGELOG; git add .; git commit -m \"update changelog\"; yarn version; git push --follow-tags; echo \"Released $npm_package_version\"",
     "predeploy": "npm-run-all -l -s format lint test"
   },
   "dependencies": {
