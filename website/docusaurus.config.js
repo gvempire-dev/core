@@ -1,4 +1,5 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
+
 module.exports = {
   title: 'GVEMPIRE',
   tagline: 'Good Vibes and Greater Ventures',
@@ -12,51 +13,57 @@ module.exports = {
   themeConfig: {
     navbar: {
       title: 'GVEMPIRE',
+      style: 'dark',
       logo: {
         alt: 'GVEMPIRE Logo',
         src: 'logos/logo__dark.png',
       },
       items: [
         {
-          type: 'doc',
-          docId: 'home',
-          position: 'left',
-          label: 'Home',
+          label: 'Business',
+          position: 'right',
+          items: [
+            { to: '/about-gv', label: 'About' },
+            { to: '/services', label: 'Services' },
+            { to: '/resume', label: 'Resume' },
+            { to: '/docs', label: 'Case Studies' },
+          ],
         },
         {
-          type: 'doc',
-          docId: 'about',
-          position: 'left',
-          label: 'About',
+          label: 'Personal',
+          position: 'right',
+          items: [
+            { to: '/about-kj', label: 'About' },
+            { to: '/timeline', label: 'Timeline' },
+            { to: '/gallery', label: 'Gallery' },
+            { to: '/blog', label: 'Blog' },
+          ],
         },
-        {
-          type: 'doc',
-          docId: 'services',
-          position: 'left',
-          label: 'Services',
-        },
-        { to: '/case-studies', label: 'Case Studies', position: 'right' },
-        { to: '/gallery', label: 'Gallery', position: 'right' },
-        { to: '/blog', label: 'Blog', position: 'right' },
       ],
     },
+
     footer: {
       style: 'dark',
+      copyright: `Copyright © ${new Date().getFullYear()} GVEMPIRE, LLC`,
       links: [
         {
-          title: 'Follow Me!',
+          title: 'Social Media',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Youtube',
+              href: 'https://youtube.com/channel/gvempire',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/tkjohnson121',
+            },
+            {
+              label: 'Discord',
+              href: 'https://discord.com/gvempire',
+            },
+            {
+              label: 'Twitch',
+              href: 'https://discord.com/gvempire',
             },
           ],
         },
@@ -64,34 +71,30 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: 'Contact',
+              to: '/contact',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'GitLab',
+              href: 'https://gitlab.com/gvempire',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
   },
+
   presets: [
     [
       '@docusaurus/preset-classic',
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+          editUrl: 'https://gitlab.com/gvempire/www/edit/main/website/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+          editUrl: 'https://gitlab.com/gvempire/www/edit/main/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
