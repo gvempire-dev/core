@@ -1,0 +1,16 @@
+{
+  "name": "@gvempire-dev/cli",
+  "version": "0.0.1",
+  "description": "off-the-shelf scripts to aid with certain tasks",
+  "main": "dist/index.js",
+  "dependencies": {
+    "prettify": "^0.1.7"
+  },
+  "scripts": {
+    "svg": "svgr --out-dir=dist/svgs svgs ",
+    "prettify": "prettier --write"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^5.5.0"
+  }
+}

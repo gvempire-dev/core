@@ -1,0 +1,34 @@
+{
+  "name": "@gvempire-dev/firebase",
+  "version": "0.0.11",
+  "description": "Google Cloud controller for @gvempire-dev collection",
+  "main": "index.js",
+  "author": "Khari Johnson <kj@gvempire.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "firebase:all": "firebase deploy",
+    "firebase:functions": "firebase deploy --only functions",
+    "firebase:firestore": "firebase deploy --only firestore",
+    "firebase:storage": "firebase deploy --only storage",
+    "deploy:database": "npm-run-all -s -l predeploy firebase:firestore",
+    "deploy:functions": "npm-run-all -s -l predeploy firebase:functions",
+    "deploy:storage": "npm-run-all -s -l predeploy firebase:storage",
+    "deploy:firestore": "npm-run-all -s -l predeploy firebase:firestore",
+    "deploy": "npm-run-all -s -l firebase:all",
+    "deploy:dev": "npm-run-all -s -l  use:dev firebase:all",
+    "deploy:prod": "npm-run-all -s -l use:prod firebase:all",
+    "predeploy": "npm-run-all -s -l format lint",
+    "format": "prettier --write './**/*/*.js'",
+    "lint": "eslint -c .eslintrc --fix ./",
+    "use:dev": "firebase use dev",
+    "use:prod": "firebase use prod"
+  },
+  "dependencies": {
+    "firebase": "^8.6.2",
+    "firebase-tools": "^9.11.0"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

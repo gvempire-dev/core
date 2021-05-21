@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "gv-collection-dev",
+    "dev":"gv-collection-dev",
+    "prod":"gv-collection"
+  }
+}

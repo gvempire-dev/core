@@ -1,13 +1,16 @@
 {
-  "name": "@gvempire/gvempire.dev",
+  "name": "@gvempire-dev/core",
   "version": "1.0.0",
-  "description": "Main Website for GVEMPIRE",
+  "description": "Core Packages for GVEMPIRE",
   "main": " ",
-  "repository": "https://gitlab.com/gvempire/www",
+  "repository": "https://github.com/gvempire-dev/core",
   "author": "KJ <kj@gvempire.com>",
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "@gvempire/website"
+    "cli",
+    "website",
+    "firebase",
+    "firebase-functions"
   ]
 }

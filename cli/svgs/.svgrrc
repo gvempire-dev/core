@@ -1,0 +1,19 @@
+# General
+icon: true
+expandProps: false
+svgo: true 
+
+# enable Typescript
+typescript: true
+ext: tsx
+
+# Output
+outDir: 'dist/svgs'
+filenameCase: 'kebab'
+
+# Replacing Attributes
+# replaceAttrValue: {old: 'new'}
+
+# Adding Props
+# svgProps: { name : 'value' }
+

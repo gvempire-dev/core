@@ -1,0 +1,23 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": {
+    "source": "../firebase-functions"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "emulators": {
+    "functions": {
+      "port": "3001"
+    },
+    "firestore": {
+      "port": "8081"
+    },
+    "hosting": {
+      "port": "3005"
+    }
+  }
+}

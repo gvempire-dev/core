@@ -1,0 +1,64 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAuthenticated() {
+      return request.auth != null
+    }
+
+    function isOwnDocument() {
+      return request.auth.uid != null && request.auth.uid == resource.data.created_by;
+    }
+
+    function isValidUserName(username){
+      return username.matches('^([a-z0-9_]){5,30}$');
+    }
+
+    function isUsernameAvailable(username){
+      return isValidUserName(username) && !exists(/databases/$(database)/documents/usernames/$(username));
+    }
+
+    function isValidShrt(shrtId){
+      return shrtId.matches('^([a-zA-Z0-9_-]){2,30}$');
+    }
+
+    function isShrtAvailable(shrtId){
+      return isValidShrt(shrtId) && !exists(/databases/$(database)/documents/shrts/$(shrtId));
+    }
+
+    match /users/{userId} {
+      allow read: if true;
+
+      allow write: if isOwnDocument() && (request.resource.data.username == resource.data.username
+        || isUserNameAvailable(request.resource.data.username)
+      );
+    }
+
+    match /usernames/{username} {
+      allow create: if isAuthenticated() && isUsernameAvailable(username);
+      allow write: if isOwnDocument() && (isValidUserName(username) || (request.resource.data.id == resource.data.id));
+      allow read: if true;
+    }
+
+    match /shrts/{shrtId} {
+      allow create: if isAuthenticated() && isShrtAvailable(request.resource.data.shrt_id);
+      allow write: if isOwnDocument() && (isValidShrt(shrtId) || (request.resource.data.shrt_id == resource.data.shrt_id));
+      allow read: if true;
+    }
+
+    match /plps/{linkId} {
+      allow read: if true;
+      allow create: if isAuthenticated();
+      allow write: if isOwnDocument();
+    }
+
+    match /recordings/{recordingId} {
+      allow create: if isAuthenticated();
+      allow read, write: if isOwnDocument();
+    }
+
+    match /storage/{storageId} {
+      allow create, read, write: if isAuthenticated();
+    }
+  }
+}
