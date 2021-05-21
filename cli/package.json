@@ -7,7 +7,7 @@
     "prettify": "^0.1.7"
   },
   "scripts": {
-    "svg": "svgr --out-dir=dist/svgs svgs ",
+    "svg": "svgr --config-file='./svgs/.svgrrc' --out-dir=dist/svgs svgs ",
     "prettify": "prettier --write"
   },
   "devDependencies": {
