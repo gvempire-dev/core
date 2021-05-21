@@ -4,6 +4,7 @@ module.exports = {
   title: 'GVEMPIRE',
   tagline: 'Good Vibes and Greater Ventures',
   url: 'https://gvempire.dev',
+  githubHost: 'gitlab.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -11,6 +12,9 @@ module.exports = {
   organizationName: 'gvempire-dev', // Usually your GitHub org/user name.
   projectName: 'GVEMPIRE', // Usually your repo name.
   themeConfig: {
+    hideableSidebar: true,
+    respectPrefersColorScheme: true,
+    defaultMode: 'dark',
     navbar: {
       title: 'GVEMPIRE',
       style: 'dark',
@@ -26,7 +30,7 @@ module.exports = {
             { to: '/about-gv', label: 'About' },
             { to: '/services', label: 'Services' },
             { to: '/resume', label: 'Resume' },
-            { to: '/docs', label: 'Case Studies' },
+            { to: '/docs/intro', label: 'Case Studies' },
           ],
         },
         {
@@ -45,6 +49,10 @@ module.exports = {
     footer: {
       style: 'dark',
       copyright: `Copyright © ${new Date().getFullYear()} GVEMPIRE, LLC`,
+      logo: {
+        alt: 'GVEMPIRE Logo',
+        src: 'logos/logo__dark.png',
+      },
       links: [
         {
           title: 'Social Media',
@@ -88,13 +96,18 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
+        showLastUpdateTime: true,
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://gitlab.com/gvempire/www/edit/main/website/',
+          editUrl: 'https://gitlab.com/gvempire/www/edit/main/website/docs',
         },
         blog: {
           showReadingTime: true,
           editUrl: 'https://gitlab.com/gvempire/www/edit/main/website/blog/',
+          feedOptions: {
+            type: 'all',
+            copyright: `Copyright © ${new Date().getFullYear()} GVEMPIRE.`,
+          },
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

@@ -1279,7 +1279,7 @@
   resolved "https://registry.yarnpkg.com/@docusaurus/module-type-aliases/-/module-type-aliases-2.0.0-beta.0.tgz#e018adfe3c8834c526ca687eed3cbc87569a47a7"
   integrity sha512-Yj+7hjy5pCK4DQ3l2JDGBF4bMY63MV/z18WK7REHniyqC66IJQT+0Gpb6Q+Oz8e2Og8AsyWIbfTXvsFWK0UhJA==
 
-"@docusaurus/plugin-content-blog@2.0.0-beta.0":
+"@docusaurus/plugin-content-blog@2.0.0-beta.0", "@docusaurus/plugin-content-blog@^2.0.0-beta.0":
   version "2.0.0-beta.0"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-content-blog/-/plugin-content-blog-2.0.0-beta.0.tgz#ea7d3679ab252e8f0e58aaf80f1fc6001c72c755"
   integrity sha512-lz63i5k/23RJ3Rk/2fIsYAoD8Wua3b5b0AbH2JoOhQu1iAIQiV8m91Z3XALBSzA3nBtAOIweNI7yzWL+JFSTvw==
@@ -1300,7 +1300,7 @@
     tslib "^2.1.0"
     webpack "^5.28.0"
 
-"@docusaurus/plugin-content-docs@2.0.0-beta.0":
+"@docusaurus/plugin-content-docs@2.0.0-beta.0", "@docusaurus/plugin-content-docs@^2.0.0-beta.0":
   version "2.0.0-beta.0"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-content-docs/-/plugin-content-docs-2.0.0-beta.0.tgz#a5a1e0e95e499eefee53e4f61aeb99ac4a669648"
   integrity sha512-WdDQUh2rRCbfJswVc0vY9EaAspxgziqpVEZja8+BmQR/TZh7HuLplT6GJbiFbE4RvwM3+PwG/jHMPglYDK60kw==
