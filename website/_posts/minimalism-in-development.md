@@ -1,0 +1,59 @@
+---
+title: 'Minimalism ins Software Development'
+excerpt:
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Praesent elementum
+  facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan
+  sit amet nulla facilities morbi tempus.'
+coverImage: '/assets/blog/dynamic-routing/cover.jpg'
+date: '2020-12-11T00:00:01.000Z'
+author:
+  name: Khari Johnson
+  picture: '/assets/blog/authors/jj.jpeg'
+ogImage:
+  url: '/assets/blog/dynamic-routing/cover.jpg'
+---
+
+When developing software, your mindset and approach can make or break your
+project. Sure, you can always rewrite code later, however writing it wrong the
+first time can cause you to spend valuable time down the line re-inventing your
+wheel.
+
+<!--truncate-->
+
+There is no *best* way to build a project. There are methods, ideologies, and
+practices you can put in place, but there are ways that work for you and/or your
+team, ways that don't, and ways you've never tried. Every project and every team
+is different. Mindset and approach are often overlooked.
+
+Something we like to keep in mind on every project is **minimalism**. We believe
+in leaving the unnecessary behind in favor of a greater focus on the necessary.
+Ever heard of **K**eep **i**t **S**imple **S**tupid (KISS)? We enjoy this
+acronym and our interpretation.
+
+Before we get into things, I hear you asking, "What minimalism mean"?
+
+I think that's an excellent question and we should start there. To me,
+minimalism means living more with less. It sounds so simple, doesn't it? Yet,
+it's been one of the hardest adjustments to my lifestyle I've ever made.
+
+Don't like my definition, here's what someone once told me.
+
+[What Is Minimalism? | The Minimalists](https://www.theminimalists.com/minimalism/)
+
+Most people assume to be a minimalist one would have to:
+
+- get rid of their car
+- stop using deodorant
+- pack everything they own into a backpack and get rid of the rest
+- travel the country with a backpack in their tiny home van
+
+Just like there's no *best* way to build a project, there's no *right* way to be
+a minimalist. There's your way, my way, The Minimalist's way, and everyone else
+who begins to make more intentional choices surrounding their consumerism.
+
+When developing, we intend to write code that's easy to read, simple to maintain
+and can be scaled. Our focus is always on the user and their experience with the
+product. We can be as clever as we want with our one-liners, as trendy as we
+want with our new stack, and as modern as we want in our design. This all goes
+out the window if the user doesn't benefit.
