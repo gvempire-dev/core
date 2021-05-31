@@ -1,28 +1,26 @@
+import { getAllPosts, getPostBySlug } from '@api/post';
+import { Header, Layout } from '@features/layout';
+import { Post, PostBody, PostHeader, PostTitle } from '@features/post';
+import { Container } from '@features/theme';
+import { CMS_NAME } from '@utils/constants';
+import markdownToHtml from '@utils/markdownToHtml';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import Container from '../../components/container';
-import Header from '../../components/header';
-import Layout from '../../components/layout';
-import PostBody from '../../components/post-body';
-import PostHeader from '../../components/post-header';
-import PostTitle from '../../components/post-title';
-import PostType from '../../types/post';
-import { getAllPosts, getPostBySlug } from '../../utils/api';
-import { CMS_NAME } from '../../utils/constants';
-import markdownToHtml from '../../utils/markdownToHtml';
 
 type Props = {
-  post: PostType;
-  morePosts: PostType[];
+  post: Post;
+  morePosts: Post[];
   preview?: boolean;
 };
 
-const Post = ({ post, morePosts, preview }: Props) => {
+export default function PostPage({ post, morePosts, preview }: Props) {
   const router = useRouter();
+
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
   return (
     <Layout preview={preview}>
       <Container>
@@ -31,19 +29,21 @@ const Post = ({ post, morePosts, preview }: Props) => {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className='mb-32'>
+            <article>
               <Head>
                 <title>
                   {post.title} | Next.js Blog Example with {CMS_NAME}
                 </title>
                 <meta property='og:image' content={post.ogImage.url} />
               </Head>
+
               <PostHeader
                 title={post.title}
                 coverImage={post.coverImage}
                 date={post.date}
                 author={post.author}
               />
+
               <PostBody content={post.content} />
             </article>
           </>
@@ -51,9 +51,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
       </Container>
     </Layout>
   );
-};
-
-export default Post;
+}
 
 type Params = {
   params: {
@@ -71,6 +69,7 @@ export async function getStaticProps({ params }: Params) {
     'ogImage',
     'coverImage',
   ]);
+
   const content = await markdownToHtml(post.content || '');
 
   return {

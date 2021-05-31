@@ -1,25 +1,15 @@
 ---
+date: '2020-12-11T00:00:01.000Z'
 title: 'Using Next.JS API routes'
 excerpt:
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Praesent elementum
-  facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan
-  sit amet nulla facilities morbi tempus.'
-coverImage: '/assets/blog/dynamic-routing/cover.jpg'
-date: '2020-12-11T00:00:01.000Z'
-author:
-  name: Khari Johnson
-  picture: '/assets/blog/authors/jj.jpeg'
+  'Next.JS comes with a useful feature out of the box, api routes. Files created
+  in the `pages/api/` folder are treated as an endpoint rather than a page.
+  Instead of exporting a React component to display your UI, you can export a
+  function returning, say, a JSON response.'
+coverImage: '/assets/blog/preview/cover.jpg'
 ogImage:
-  url: '/assets/blog/dynamic-routing/cover.jpg'
+  url: '/assets/blog/preview/cover.jpg'
 ---
-
-Next.JS comes with a useful feature out of the box, api routes. Files created in
-the `pages/api/` folder are treated as an endpoint rather than a page. Instead
-of exporting a React component to display your UI, you can export a function
-returning, say, a JSON response.
-
-<!--truncate-->
 
 For example, if you wanted to return a blog post from your CMS, you could write
 the following in file `pages/api/post.js` :

@@ -1,7 +1,8 @@
+import { CMS_NAME, HOME_OG_IMAGE_URL } from '@utils/constants';
 import Head from 'next/head';
-import { CMS_NAME, HOME_OG_IMAGE_URL } from '../utils/constants';
+import * as React from 'react';
 
-const Meta = () => {
+export function Meta() {
   return (
     <Head>
       <link
@@ -39,6 +40,4 @@ const Meta = () => {
       <meta property='og:image' content={HOME_OG_IMAGE_URL} />
     </Head>
   );
-};
-
-export default Meta;
+}

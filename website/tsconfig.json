@@ -12,8 +12,16 @@
     "noEmit": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@api/*": ["./api/*"],
+      "@components/*": ["./components/*"],
+      "@features/*": ["./features/*"],
+      "@utils/*": ["./utils/*"],
+      "@pages/*": ["./pages/*"]
+    }
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "../node_modules/"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
