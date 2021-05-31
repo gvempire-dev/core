@@ -1,5 +1,5 @@
 import { getAllPosts } from '@api/post';
-import { HeroPost, MoreStories } from '@components/index';
+import { MoreStories } from '@components/index';
 import { Layout } from '@features/layout';
 import { Post } from '@features/post';
 import { Container } from '@features/theme';
@@ -11,20 +11,12 @@ type Props = {
 export default function Index({ allPosts }: Props) {
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
+
   return (
     <>
       <Layout>
         <Container>
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
+          <h1>Khari Johnson .dev</h1>
 
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
